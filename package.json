@@ -1,0 +1,29 @@
+{
+  "name": "spacex-api",
+  "version": "1.0.0",
+  "description": "A JavaScript / TypeScript wrapper for fetching data from SpaceX api",
+  "main": "dist/index.js",
+  "types" : "dist/index.d.ts",
+  "dependencies": {},
+  "devDependencies": {
+    "typescript": "^3.5.3"
+  },
+  "scripts": {
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tbprojects/spacex-api.git"
+  },
+  "keywords": [
+    "spacex",
+    "api"
+  ],
+  "author": "tbprojects <info@tbprojects.pl>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tbprojects/spacex-api/issues"
+  },
+  "homepage": "https://github.com/tbprojects/spacex-api#readme"
+}
