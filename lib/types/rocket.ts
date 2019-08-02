@@ -1,91 +1,56 @@
 import { ControlQuery } from './control-query';
 
-export interface Height {
+export interface RocketLength {
   meters: number;
   feet: number;
 }
 
-export interface Diameter {
-  meters: number;
-  feet: number;
-}
-
-export interface Mass {
+export interface RocketMass {
   kg: number;
   lb: number;
 }
 
-export interface PayloadWeight {
+export interface RocketPayloadWeight {
   id: string;
   name: string;
   kg: number;
   lb: number;
 }
 
-export interface ThrustSeaLevel {
-  kN: number;
-  lbf: number;
-}
-
-export interface ThrustVacuum {
-  kN: number;
-  lbf: number;
-}
-
-export interface FirstStage {
+export interface RocketFirstStage {
   reusable: boolean;
   engines: number;
   fuel_amount_tons: number;
   burn_time_sec: number;
-  thrust_sea_level: ThrustSeaLevel;
-  thrust_vacuum: ThrustVacuum;
+  thrust_sea_level: RocketThrust;
+  thrust_vacuum: RocketThrust;
 }
 
-export interface Thrust {
+export interface RocketThrust {
   kN: number;
   lbf: number;
 }
 
-export interface Height2 {
-  meters: number;
-  feet: number;
+export interface RocketCompositeFairing {
+  height: RocketLength;
+  diameter: RocketLength;
 }
 
-export interface Diameter2 {
-  meters: number;
-  feet: number;
-}
-
-export interface CompositeFairing {
-  height: Height2;
-  diameter: Diameter2;
-}
-
-export interface Payloads {
+export interface RocketPayloads {
   option_1: string;
   option_2: string;
-  composite_fairing: CompositeFairing;
+  composite_fairing: RocketCompositeFairing;
 }
 
-export interface SecondStage {
+export interface RocketSecondStage {
   engines: number;
   fuel_amount_tons: number;
   burn_time_sec: number;
-  thrust: Thrust;
-  payloads: Payloads;
+  thrust: RocketThrust;
+  payloads: RocketPayloads;
 }
 
-export interface ThrustSeaLevel2 {
-  kN: number;
-  lbf: number;
-}
-
-export interface ThrustVacuum2 {
-  kN: number;
-  lbf: number;
-}
-
-export interface Engines {
+export interface RocketEngines {
   number: number;
   type: string;
   version: string;
@@ -93,12 +58,12 @@ export interface Engines {
   engine_loss_max: number;
   propellant_1: string;
   propellant_2: string;
-  thrust_sea_level: ThrustSeaLevel2;
-  thrust_vacuum: ThrustVacuum2;
+  thrust_sea_level: RocketThrust;
+  thrust_vacuum: RocketThrust;
   thrust_to_weight: number;
 }
 
-export interface LandingLegs {
+export interface RocketLandingLegs {
   number: number;
   material: string;
 }
@@ -113,14 +78,14 @@ export interface Rocket {
   first_flight: string;
   country: string;
   company: string;
-  height: Height;
-  diameter: Diameter;
-  mass: Mass;
-  payload_weights: PayloadWeight[];
-  first_stage: FirstStage;
-  second_stage: SecondStage;
-  engines: Engines;
-  landing_legs: LandingLegs;
+  height: RocketLength;
+  diameter: RocketLength;
+  mass: RocketMass;
+  payload_weights: RocketPayloadWeight[];
+  first_stage: RocketFirstStage;
+  second_stage: RocketSecondStage;
+  engines: RocketEngines;
+  landing_legs: RocketLandingLegs;
   wikipedia: string;
   description: string;
   rocket_id: string;

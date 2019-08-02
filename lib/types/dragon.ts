@@ -1,76 +1,51 @@
 import { ControlQuery } from './control-query';
 
-export interface HeatShield {
+export interface DragonHeatShield {
   material: string;
   size_meters: number;
   temp_degrees: number;
   dev_partner: string;
 }
 
-export interface Thrust {
+export interface DragonThrust {
   kN: number;
   lbf: number;
 }
 
-export interface Thruster {
+export interface DragonThruster {
   type: string;
   amount: number;
   pods: number;
   fuel_1: string;
   fuel_2: string;
-  thrust: Thrust;
+  thrust: DragonThrust;
 }
 
-export interface LaunchPayloadMass {
+export interface DragonMass {
   kg: number;
   lb: number;
 }
 
-export interface LaunchPayloadVol {
-  cubic_meters: number;
-  cubic_feet: number;
-}
-
-export interface ReturnPayloadMass {
-  kg: number;
-  lb: number;
-}
-
-export interface ReturnPayloadVol {
-  cubic_meters: number;
-  cubic_feet: number;
-}
-
-export interface PayloadVolume {
+export interface DragonVolume {
   cubic_meters: number;
   cubic_feet: number;
 }
 
 export interface PressurizedCapsule {
-  payload_volume: PayloadVolume;
+  payload_volume: DragonVolume;
 }
 
-export interface TrunkVolume {
-  cubic_meters: number;
-  cubic_feet: number;
-}
-
-export interface Cargo {
+export interface DragonCargo {
   solar_array: number;
   unpressurized_cargo: boolean;
 }
 
-export interface Trunk {
-  trunk_volume: TrunkVolume;
-  cargo: Cargo;
+export interface DragonTrunk {
+  trunk_volume: DragonVolume;
+  cargo: DragonCargo;
 }
 
-export interface HeightWTrunk {
-  meters: number;
-  feet: number;
-}
-
-export interface Diameter {
+export interface DragonLength {
   meters: number;
   feet: number;
 }
@@ -86,16 +61,16 @@ export interface Dragon {
   dry_mass_kg: number;
   dry_mass_lb: number;
   first_flight: string;
-  heat_shield: HeatShield;
-  thrusters: Thruster[];
-  launch_payload_mass: LaunchPayloadMass;
-  launch_payload_vol: LaunchPayloadVol;
-  return_payload_mass: ReturnPayloadMass;
-  return_payload_vol: ReturnPayloadVol;
+  heat_shield: DragonHeatShield;
+  thrusters: DragonThruster[];
+  launch_payload_mass: DragonMass;
+  launch_payload_vol: DragonVolume;
+  return_payload_mass: DragonMass;
+  return_payload_vol: DragonVolume;
   pressurized_capsule: PressurizedCapsule;
-  trunk: Trunk;
-  height_w_trunk: HeightWTrunk;
-  diameter: Diameter;
+  trunk: DragonTrunk;
+  height_w_trunk: DragonLength;
+  diameter: DragonLength;
   wikipedia: string;
   description: string;
 }

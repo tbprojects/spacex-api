@@ -1,6 +1,6 @@
 import { ControlQuery } from './control-query';
 
-export interface Mission {
+export interface CapsuleMission {
   name: string;
   flight: number;
 }
@@ -9,9 +9,9 @@ export interface Capsule {
   capsule_serial: string;
   capsule_id: string;
   status: string;
-  original_launch: Date;
+  original_launch: string;
   original_launch_unix: number;
-  missions: Mission[];
+  missions: CapsuleMission[];
   landings: number;
   type: string;
   details: string;

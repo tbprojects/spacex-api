@@ -1,6 +1,6 @@
 import { ControlQuery } from './control-query';
 
-export interface Core {
+export interface LaunchCore {
   core_serial: string;
   flight: number;
   block: number;
@@ -13,11 +13,11 @@ export interface Core {
   landing_vehicle: string;
 }
 
-export interface FirstStage {
-  cores: Core[];
+export interface LaunchFirstStage {
+  cores: LaunchCore[];
 }
 
-export interface OrbitParams {
+export interface LaunchOrbitParams {
   reference_system: string;
   regime: string;
   longitude: number;
@@ -28,14 +28,14 @@ export interface OrbitParams {
   inclination_deg: number;
   period_min: number;
   lifespan_years: number;
-  epoch: Date;
+  epoch: string;
   mean_motion: number;
   raan: number;
   arg_of_pericenter: number;
   mean_anomaly: number;
 }
 
-export interface Payload {
+export interface LaunchPayload {
   payload_id: string;
   norad_id: number[];
   reused: boolean;
@@ -46,31 +46,31 @@ export interface Payload {
   payload_mass_kg: number;
   payload_mass_lbs: number;
   orbit: string;
-  orbit_params: OrbitParams;
+  orbit_params: LaunchOrbitParams;
 }
 
-export interface SecondStage {
+export interface LaunchSecondStage {
   block: number;
-  payloads: Payload[];
+  payloads: LaunchPayload[];
 }
 
-export interface Fairings {
+export interface LaunchFairings {
   reused: boolean;
   recovery_attempt: boolean;
   recovered: boolean;
   ship: any;
 }
 
-export interface Rocket {
+export interface LaunchRocket {
   rocket_id: string;
   rocket_name: string;
   rocket_type: string;
-  first_stage: FirstStage;
-  second_stage: SecondStage;
-  fairings: Fairings;
+  first_stage: LaunchFirstStage;
+  second_stage: LaunchSecondStage;
+  fairings: LaunchFairings;
 }
 
-export interface Telemetry {
+export interface LaunchTelemetry {
   flight_club: string;
 }
 
@@ -80,7 +80,7 @@ export interface LaunchSite {
   site_name_long: string;
 }
 
-export interface Links {
+export interface LaunchLinks {
   mission_patch: string;
   mission_patch_small: string;
   reddit_campaign: string;
@@ -95,7 +95,7 @@ export interface Links {
   flickr_images: string[];
 }
 
-export interface Timeline {
+export interface LaunchTimeline {
   webcast_liftoff: number;
   go_for_prop_loading: number;
   rp1_loading: number;
@@ -126,23 +126,23 @@ export interface Launch {
   mission_id: string[];
   launch_year: string;
   launch_date_unix: number;
-  launch_date_utc: Date;
-  launch_date_local: Date;
+  launch_date_utc: string;
+  launch_date_local: string;
   is_tentative: boolean;
   tentative_max_precision: string;
   tbd: boolean;
   launch_window: number;
-  rocket: Rocket;
+  rocket: LaunchRocket;
   ships: string[];
-  telemetry: Telemetry;
+  telemetry: LaunchTelemetry;
   launch_site: LaunchSite;
   launch_success: boolean;
-  links: Links;
+  links: LaunchLinks;
   details: string;
   upcoming: boolean;
-  static_fire_date_utc: Date;
+  static_fire_date_utc: string;
   static_fire_date_unix: number;
-  timeline: Timeline;
+  timeline: LaunchTimeline;
 }
 
 export interface LaunchQuery extends ControlQuery {

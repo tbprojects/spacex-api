@@ -1,6 +1,6 @@
 import { ControlQuery } from './control-query';
 
-interface Mission {
+export interface CoreMission {
   name: string;
   flight: number;
 }
@@ -9,9 +9,9 @@ export interface Core {
   core_serial: string;
   block: number;
   status: string;
-  original_launch: Date;
+  original_launch: string;
   original_launch_unix: number;
-  missions: Mission[];
+  missions: CoreMission[];
   reuse_count: number;
   rtls_attempts: number;
   rtls_landings: number;

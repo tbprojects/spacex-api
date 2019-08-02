@@ -1,6 +1,6 @@
 import { ControlQuery } from './control-query';
 
-export interface Location {
+export interface LandingPadLocation {
   name: string;
   region: string;
   latitude: number;
@@ -11,7 +11,7 @@ export interface LandingPad {
   id: string;
   full_name: string;
   status: string;
-  location: Location;
+  location: LandingPadLocation;
   landing_type: string;
   attempted_landings: number;
   successful_landings: number;

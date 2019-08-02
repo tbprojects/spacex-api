@@ -1,11 +1,11 @@
 import { ControlQuery } from './control-query';
 
-export interface Position {
+export interface ShipPosition {
   latitude: number;
   longitude: number;
 }
 
-export interface Mission {
+export interface ShipMission {
   name: string;
   flight: number;
 }
@@ -28,10 +28,10 @@ export interface Ship {
   status: string;
   speed_kn: number;
   course_deg: number;
-  position: Position;
+  position: ShipPosition;
   successful_landings: number;
   attempted_landings: number;
-  missions: Mission[];
+  missions: ShipMission[];
   url: string;
   image: string;
 }

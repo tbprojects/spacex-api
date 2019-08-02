@@ -1,6 +1,6 @@
 import { ControlQuery } from './control-query';
 
-export interface OrbitParams {
+export interface PayloadOrbitParams {
   reference_system: string;
   regime: string;
   longitude: number;
@@ -11,7 +11,7 @@ export interface OrbitParams {
   inclination_deg: number;
   period_min: number;
   lifespan_years: number;
-  epoch: Date;
+  epoch: string;
   mean_motion: number;
   raan: number;
 }
@@ -27,7 +27,7 @@ export interface Payload {
   payload_mass_kg: number;
   payload_mass_lbs: number;
   orbit: string;
-  orbit_params: OrbitParams;
+  orbit_params: PayloadOrbitParams;
 }
 
 export interface PayloadQuery extends ControlQuery {

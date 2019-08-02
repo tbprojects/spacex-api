@@ -1,6 +1,6 @@
 export interface Roadster {
   name: string;
-  launch_date_utc: Date;
+  launch_date_utc: string;
   launch_date_unix: number;
   launch_mass_kg: number;
   launch_mass_lbs: number;

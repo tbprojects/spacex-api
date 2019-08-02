@@ -1,6 +1,6 @@
 {
   "name": "spacex-api",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A JavaScript / TypeScript wrapper for fetching data from SpaceX api",
   "main": "dist/index.js",
   "types" : "dist/index.d.ts",

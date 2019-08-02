@@ -1,4 +1,4 @@
-export interface Headquarters {
+export interface CompanyHeadquarters {
   address: string;
   city: string;
   state: string;
@@ -17,7 +17,7 @@ export interface CompanyInfo {
   coo: string;
   cto_propulsion: string;
   valuation: number;
-  headquarters: Headquarters;
+  headquarters: CompanyHeadquarters;
   summary: string;
 }
 
