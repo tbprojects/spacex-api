@@ -13,7 +13,7 @@ import { Rocket, RocketQuery } from './types/rocket';
 import { Ship, ShipQuery } from './types/ship';
 
 export class SpaceX {
-  static ApiUrl = 'https://api.spacexdata.com/v3';
+  static ApiUrl = 'https://api.spacexdata.com/v4';
 
   static getAllCapsules(query?: Partial<CapsuleQuery>): Promise<Capsule[]> {
     return SpaceX.makeRequest('/capsules', query);
