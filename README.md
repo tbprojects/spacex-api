@@ -25,7 +25,7 @@ SpaceX
 ```javascript
 var SpaceX = require('spacex-api').SpaceX;
 
-SpaceX.
+SpaceX
     .getLatestLaunch()
     .then(launch => alert(launch.mission_name))
 
